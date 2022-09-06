@@ -1,50 +1,17 @@
 # ACM Research coding challenge (Fall 2022)
 
-Note: if it's getting down to the deadline (September 5th at 11:59 CT) and you don't think you will be able to finish your project on time, just [submit](http://apply.acmutd.co/research-coding-challenge) whatever you have! Also, you *can* technically turn it in after midnight – we will look at submissions tomorrow morning – but don't use that as an excuse to stay up late :P.
+Hello! For my coding challenge I decided to answer two separate questions. The first half of my response is supposed to answer how people's taste in cars differs between states. The second half of my response is supposed to answer which colors of cars are most expensive
 
-This semester's challenge is especially open-ended. [Here is a dataset](https://www.kaggle.com/datasets/chancev/carsforsale) on Kaggle called "CarsForSale". It contains data scraped from the online car marketplace Cars.com. Each row contains 25 pieces of information about a car's listing, such as its price, year, model, and color.
+## Part 1 - How do people's taste in cars differ between states?
 
-The challenge is to do *something interesting* with the data. Can you find a pattern, answer a question, or create a visualization? In case nothing comes to mind, here are some ideas, with varying complexity:
+For this part, I wanted to figure out how people's taste in cars differ between states. First, I filtered the list to find the top 75% of the most highly rated and commented cars, to see which cars are most liked by people in the US as a whole through the use of Bayesian rankings to calculate each cars weighted ranking. Afterwards I made a list for the attributes of the car I wanted to see the preferences of (Year, Make, Model, Drivetrain, Maximum MPG, Minimum MPG, Fuel Type, Transmission, Engine, and Mileage). Then through the use of for loops, the code will loop through every state and find all the cars in that state. Then using .value_counts I found the most popular attributes in the list of the highest rated / most commented cars and printed them out for every state. Although it works, some states don't print out any attributes, which will be something I have to work on
 
-- What qualities about a car do buyers seem to value the most?
-- Make a graph to visualize the most popular car models over time.
-- What colors of cars are most expensive?
-- Do different brands try to appeal to people looking for different things?
-- Come up with your own algorithm to figure out how good of a deal a listing is and compare it to the one in the dataset (`DealType`).
-- Use [cluster analysis](https://en.wikipedia.org/wiki/Cluster_analysis) to group the cars into categories.
-- How do people's taste in cars differ between states?
-- Train a machine learning model to predict some aspect of a car based on other information from its listing.
+## Part 2 - Which colors of cars are most expensive?
+For this part, I wanted to graphically figure out which cars are most expensive. First I made a function that will simplify the colors of the exterior colors dataset by taking out all the complex colors and classifying all the colors into simpler color groups (red, black, white, blue, green, brown, orange, yellow, gray, and other). Next I converted the price dataset from an object to an int by taking out all commas and question marks and assigning it to int. Next using colors as the independent variable and price as the dependent variable, I graphed a boxplot that will find the meding price of a car for each color and bar graph that displays the mean price of a car for each color. My code found that the most expensive average mean price of a car is yellow, followed by other colors and black. My code also found that the most expensive average median price of a car is yellow, followed by white, black, and other. 
 
-However, we strongly encourage you to come up with your own problem to solve!
-
-You can use any programming language, framework, or library you want, but we recommend [creating a notebook in Kaggle](https://www.kaggle.com/docs/notebooks) and using Python. This will run in your browser, interlaces code with documentation, allows you to import the CarsForSale dataset easily by pressing the "Add data" button, and gives you access to Python's high-quality, high-level libraries for working with data. [Learn more about data science in Python.](https://www.w3schools.com/datascience/ds_python.asp)
-
-## How to submit your solution
-
-1. [Create a **public** fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) of this repository and name it  `ACM-Research-coding-challenge-22F` (click the "Fork" button in the top right).
-
-2. Replace this README file with a description ([written in Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/about-writing-and-formatting-on-github)) of your solution. Regardless of your success, describe the problem you set out to solve and how you did it. Split it up into sections with headers, and, if relevant, include figures.
-
-3. Make sure to include all relevant files in your fork. If you made the project in a Kaggle notebook, click **File** → **Download Notebook** to download it as an `.ipynb` file.
-
-4. You may have to "clone" the fork you made to edit files locally on your computer and "push" them to GitHub. Learn how to do that [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
-
-4. Submit the link to your fork in this [form](http://apply.acmutd.co/research-coding-challenge).
-
-## No collaboration policy
-
-**You may not collaborate with anyone on this challenge.** You _are_ allowed (and encouraged) to use internet documentation. If you use existing code (either from Github, Stack Overflow, or other sources), **please cite your sources in the README**.
-
-## Timing
-
-Please don't spend too long on this project: **30 to 60 minutes** is reasonable. It's okay to put more time into your submission than that, but we don't expect you to get that much done; we really don't want this challenge to be a burden!
-
-If you're *completely new* to this kind of project, however, it will likely take you more than an hour. This is a *densely useful* project to go through (you will learn a lot), so we believe this is justified.
-
-## Assessment criteria
-
-Submissions will be evaluated holistically, in combination with the rest of your application. We will consider your effort, use of external resources, how you approached the problem, and presentation, among other considerations.
-
-## Support and questions
-
-Feel free to ask for clarifications in the #research-qna channel in the [ACM UTD Discord server](https://discord.gg/nJxRdKdG4d)! You can also directly message Roman Hauksson on Discord: `RomanHauksson#3458`.
+## Citation
+Here are all the sources of code I used / took heavy inspiration from. Mpst of my information came from ACM and Stack Overflow. 
+1. https://www.kaggle.com/code/alexandernchin/acm-research/notebook
+2. https://www.kaggle.com/code/kll505/acm-coding-challenge#Color-Analysis
+3. https://stackoverflow.com/questions/63364949/how-to-plot-a-bar-plot-of-mean-value-by-category
+4. https://www.geeksforgeeks.org/analyzing-selling-price-of-used-cars-using-python/
